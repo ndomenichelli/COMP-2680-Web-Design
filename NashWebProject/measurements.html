@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <title>Measurements</title>
+   
+   <link rel = "stylesheet" type = "text/css" href="base.css">
+   <link rel = "stylesheet" type = "text/css" href="styles4.css">
+   <link rel = "stylesheet" type = "text/css" href="visual4.css">
+   
+</head>
+
+<body onload="startForm()">
+
+<script type="text/javascript"> 
+		function dateToday(){
+		
+			var Today = new Date();
+			var thisMonth = Today.getMonth()+1;
+			var thisDay = Today.getDate();
+			var thisYear = Today.getFullYear();
+
+			return "" + thisMonth + "/" + thisDay + "/" + thisYear; 
+		}
+		
+		
+
+		function startForm(){
+			document.getElementById("formdate").value = dateToday();
+			document.getElementById("firstname").focus();
+		}
+		
+		</script>
+   <header>
+      <nav class="horizontal" id="mainLinks">
+         <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="costume_rentals.html">Costume Rentals</a></li>
+            <li><a href="wedding_bookings.html">Wedding Bookings</a></li>
+            <li><a href="measurements.html">Measurements</a></li>
+			<li><a href="references.html">References</a></li>
+         </ul>
+      </nav>
+   </header>
+   <article>
+      <h1>Measurements</h1>
+	  <center>
+	  
+	  <div class="flex-container">
+			<div></div>
+			<div></div>
+			<div>Today's Date: <input name="formdate" size="10" maxlength="10" readonly /></div>  
+		</div>
+	  
+		<div class="flex-container">
+			<div>1) Name (first, last):</div>
+			<div><input name="firstname" placeholder="John"/></div>
+			<div><input name="lastname" placeholder="Smith"/></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>2) Email Address:</div>
+			<div><input name="email" maxlength="10"  placeholder="johnsmith@gmail.com"/></div>
+			<div></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>3) Wedding Date:</div>
+			<div><input name="weddate" value="mm/dd/yyyy" size="10" maxlength="10" /></div>
+			<div></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>4) Dress Selction:</div>
+			<div> <select name="physician" onblur="checkOther();">
+				  <option value="1">Dress 1</option>
+				  <option value="2">Dress 2</option>
+				  <option value="3">Dress 3</option>
+				  <option value="4">Dress 4</option>
+				  <option value="5">Dress 5</option>
+
+				  </select></div>
+			<div></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>&nbsp;&nbsp;&nbsp;&nbsp; If other (specify): </div>
+			<div><input name="othername" /></div>
+			<div></div>  
+		</div>
+	 
+		</table>
+		
+		<div class = "imgClass">
+				<img src="measurementsCropped.jpg" id="measurements">
+		</div>
+		
+		<table>
+		<tbody>
+		<tr>
+			<td>Bust</td>
+			<td><input type="text" name="a" placeholder="A"></td>
+		</tr>
+		<tr>
+			<td>Waist</td>
+			<td><input type="text" name="b" placeholder="B"> </td>
+		</tr>
+		<tr>
+			<td>Hips</td>
+			<td><input type="text" name="c" placeholder="C"></td>
+		</tr>
+		<tr>
+			<td>Back Width</td>
+			<td><input type="text" name="d" placeholder="D"></td>
+		</tr>
+		<tr>
+			<td>Front Chest</td>
+			<td><input type="text" name="e" placeholder="E"></td>
+		</tr>
+		<tr>
+			<td>Shoulder</td>
+			<td><input type="text" name="f" placeholder="F"></td>
+		</tr>
+		<tr>
+			<td>Neck Size</td>
+			<td><input type="text" name="g" placeholder="G"></td>
+		</tr>
+		<tr>
+			<td>Sleeve</td>
+			<td><input type="text" name="h" placeholder="H"></td>
+		</tr>
+		<tr>
+			<td>Under Bust</td>
+			<td><input type="text" name="j" placeholder="J"></td>
+		</tr>
+		<tr>
+			<td>Wrist;</td>
+			<td><input type="text" name="n" placeholder="N"></td>
+		</tr>
+		<tr>
+			<td>Upper Arm</td>
+			<td><input type="text" name="o" placeholder="O"></td>
+		</tr>
+		<tr>
+			<td>Calf</td>
+			<td><input type="text" name="p" placeholder="P"></td>
+		</tr>
+		<tr>
+			<td>Ankle</td>
+			<td><input type="text" name="r" placeholder="R"></td>
+		</tr>
+		<tr>
+			<td>Nape to Wrist</td>
+			<td><input type="text" name="gtob" placeholder="G-B"></td>
+		</tr>
+		<tr>
+			<td>Waist to Hip</td>
+			<td><input type="text" name="btoc" placeholder="B-C"></td>
+		</tr>
+		<tr>
+			<td>Front Shoulder to Waist</td>
+			<td><input type="text" name="ftob" placeholder="F-B"></td>
+		</tr>
+		<tr>
+			<td>Outside Leg</td>
+			<td><input type="text" name="ktom" placeholder="K-M"></td>
+		</tr>
+		<tr>
+			<td>Inside Leg</td>
+			<td><input type="text" name="ltom" placeholder="L-M"></td>
+		</tr>
+		</tbody>
+	</table>
+		
+		</center>
+      <p><a href="home.html">Return to Home page</a></p>
+   </article>
+   <footer>
+     
+   </footer>
+</body>
+</html>

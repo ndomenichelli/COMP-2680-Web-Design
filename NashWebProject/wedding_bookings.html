@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <title>Wedding Bookings</title>
+   
+   <link rel = "stylesheet" type = "text/css" href="base.css">
+   <link rel = "stylesheet" type = "text/css" href="styles4.css">
+   <link rel = "stylesheet" type = "text/css" href="visual4.css">
+    
+</head>
+
+<body onload="startForm()">
+
+<script type="text/javascript"> 
+		function dateToday(){
+		
+			var Today = new Date();
+			var thisMonth = Today.getMonth()+1;
+			var thisDay = Today.getDate();
+			var thisYear = Today.getFullYear();
+
+			return "" + thisMonth + "/" + thisDay + "/" + thisYear; 
+		}
+
+		function startForm(){
+			document.getElementById("formdate").value = dateToday();
+			document.getElementById("firstname").focus();
+		}
+
+		function setPrices(){
+		
+			var dressOption = document.getElementById("dress").value;
+			
+			if(dressOption == 1){
+		
+				document.getElementById("consultation").value = 10;
+				document.getElementById("fabric").value = 10;
+				document.getElementById("style").value = 10;
+				document.getElementById("labor").value = 10;
+				document.getElementById("accessories").value = 10;
+				document.getElementById("alteration").value = 10;
+
+			}
+			else if(dressOption == 2){
+				document.getElementById("consultation").value = 20;
+				document.getElementById("fabric").value = 20;
+				document.getElementById("style").value = 20;
+				document.getElementById("labor").value = 20;
+				document.getElementById("accessories").value = 20;
+				document.getElementById("alteration").value = 20;
+			}
+			
+			var consultation = Number(document.getElementById("consultation").value);
+			var fabric = Number(document.getElementById("fabric").value);
+			var style = Number(document.getElementById("style").value);
+			var labor = Number(document.getElementById("labor").value);
+			var accessories = Number(document.getElementById("accessories").value);
+			var alteration = Number(document.getElementById("alteration").value);
+			
+			document.getElementById("TOTAL").value =(consultation + fabric + style + labor + accessories + alteration);
+		
+		}
+		
+		function checkData(){
+			
+			var checkBox = document.getElementById("terms");
+			
+			if (checkBox.checked == true){
+				alert("Form submitted successfully");
+				return true;
+			}
+			else{
+				alert("You still need parental consent");
+				return false;
+			}
+
+		}
+</script>
+   <header>
+      <nav class="horizontal" id="mainLinks">
+         <ul>
+           	<li><a href="home.html">Home</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="costume_rentals.html">Costume Rentals</a></li>
+            <li><a href="wedding_bookings.html">Wedding Bookings</a></li>
+            <li><a href="measurements.html">Measurements</a></li>
+			<li><a href="references.html">References</a></li>
+         </ul>
+      </nav>
+   </header>
+   <article>
+      <h1>Wedding Bookings</h1>
+		<center>
+	  
+		<div class="flex-container">
+			<div></div>
+			<div></div>
+			<div>Today's Date: <input id="formdate" size="10" maxlength="10" readonly /></div>  
+		</div>
+	  
+		<div class="flex-container">
+			<div>1) Name (first, last):</div>
+			<div><input name="firstname" placeholder="John"/></div>
+			<div><input name="lastname" placeholder="Smith"/></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>2) Email Address:</div>
+			<div><input name="email" maxlength="10"  placeholder="johnsmith@gmail.com"/></div>
+			<div></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>3) Wedding Date:</div>
+			<div><input name="weddate" placeholder="mm/dd/yyyy" size="10" maxlength="10" /></div>
+			<div></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>4) Dress Selction:</div>
+			<div> <select id="dress" onblur="checkOther()" onchange="setPrices()">
+				  <option value="1">Dress 1</option>
+				  <option value="2">Dress 2</option>
+				  <option value="3">Dress 3</option>
+				  <option value="4">Dress 4</option>
+				  <option value="5">Other</option>
+
+				  </select></div>
+			<div></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>&nbsp;&nbsp;&nbsp;&nbsp; If other (specify): </div>
+			<div><input name="othername" /></div>
+			<div></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>5) Price: </div>
+			<div>Consultation</div>
+			<div><input id="consultation" value="0" size="1" maxlength="1" readonly /></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div></div>
+			<div>Fabric</div>
+			<div><input id="fabric" value="0" size="1" maxlength="1" readonly /></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div></div>
+			<div>Style</div>
+			<div><input id="style" value="0" size="1" maxlength="1" readonly /></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div></div>
+			<div>Labor</div>
+			<div><input id="labor" value="0" size="1" maxlength="1" readonly /></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div></div>
+			<div>Accessories</div>
+			<div><input id="accessories" value="0" size="1" maxlength="1" readonly /></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div></div>
+			<div>Alteration</div>
+			<div><input id="alteration" value="0" size="1" maxlength="1" readonly /></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div></div>
+			<div>TOTAL</div>
+			<div><input id="TOTAL" value="0" size="1" maxlength="1" readonly /></div>  
+		</div>
+		
+		<div class="flex-container">
+			<div>6) Terms and Conditions:	</div>
+			<div><input type="checkbox" id="terms" /></div>
+			<div></div>  
+		</div>
+	  <table cellspacing="3" cellpadding="5">
+
+			<tr>
+			   <td colspan="3" align="center">
+				  <input type="submit" value="Register" onclick="checkData()" />&nbsp;&nbsp;
+				  <input type="reset" value="Reload" onClick="window.location.reload()"/>
+			   </td>
+			</tr>
+		</table>
+		</center>
+      <p><a href="measurements.html">Go to Measurements</a></p>
+   </article>
+   <footer>
+      
+   </footer>
+</body>
+</html>
